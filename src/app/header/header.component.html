@@ -11,7 +11,32 @@
     </ul>
   </div>
   <div>
-    <button type="button" class="btn btn-primary">Add Employee</button>
+    <button type="button" class="btn btn-primary" (click)="onEmployeeAdd()">Add Employee</button>
   </div>
-
 </nav>
+
+
+<div class="modal" *ngIf="showForm">
+  <div class="modal-content">
+    <span class="close" (click)="onEmployeeAdd()">&times;</span>
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input id="firstName" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" type="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input id="salary" type="number" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-success mt-3">Submit</button>
+    </form>
+  </div>
+</div>
