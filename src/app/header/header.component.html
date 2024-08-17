@@ -21,6 +21,10 @@
     <span class="close" (click)="onEmployeeAdd()">&times;</span>
     <form>
       <div class="form-group">
+        <label for="id">ID:</label>
+        <input id="id" type="text" class="form-control">
+      </div>
+      <div class="form-group">
         <label for="firstName">First Name:</label>
         <input id="firstName" type="text" class="form-control">
       </div>
@@ -36,7 +40,8 @@
         <label for="salary">Salary:</label>
         <input id="salary" type="number" class="form-control">
       </div>
-      <button type="submit" class="btn btn-success mt-3">Submit</button>
+      <button type="submit" class="btn btn-success mt-3">Add Employee</button>
+      <button type="cancel" class="btn btn-danger mt-3">Cancel</button>
     </form>
   </div>
 </div>

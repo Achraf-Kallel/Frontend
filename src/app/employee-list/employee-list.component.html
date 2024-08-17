@@ -1,17 +1,17 @@
-<table class="table table-striped table-bordered"  >
-  <thead class="thead-dark">
-  <tr>
-    <th scope="col">Id</th>
-    <th scope="col">First Name</th>
-    <th scope="col">Last Name</th>
-    <th scope="col">Email</th>
-    <th scope="col">Salary</th>
-    <th scope="col">Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let Employee of Employees" >
-
+<div class="table-container">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let Employee of Employees">
       <th scope="row">{{ Employee.id }}</th>
       <td>{{ Employee.First_Name}}</td>
       <td>{{ Employee.Last_Name}}</td>
@@ -21,7 +21,7 @@
         <button type="button" class="btn btn-primary btn-sm">Update</button>
         <button type="button" class="btn btn-danger btn-sm">Delete</button>
       </td>
-
-  </tr>
-  </tbody>
-</table>
+    </tr>
+    </tbody>
+  </table>
+</div>

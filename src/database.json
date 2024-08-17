@@ -1,0 +1,19 @@
+{
+  "Employees": [
+    {
+      "id": 1,
+      "First_Name":"Achraf" ,
+      "Last_Name":"Kallel" ,
+      "Email": "achrafkallel58@gmail.com",
+      "Salary":2000
+    },
+    {
+      "id":2,
+      "First_Name":"Ilyes",
+      "Last_Name":"Saadaoui",
+      "Email":"ilyessaadaoui@gmail.com",
+      "Salary":2100
+
+    }
+  ]
+}
