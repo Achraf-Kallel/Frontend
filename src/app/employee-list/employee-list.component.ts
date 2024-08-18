@@ -1,25 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { Employee } from '../employee.model';
-import { EmployeeService } from '../app.config.server';
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.scss'],
+  imports: [
+    NgForOf
+  ]
 })
 export class EmployeeListComponent implements OnInit {
-  Employees: Employee[] = [];
+  Employees: Employee[] = [
+    new Employee(1,"achraf","kallel","achrafkallel29",2000)
+  ];
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.loadEmployees();
+
   }
 
-  loadEmployees() {
-    this.employeeService.getEmployees().subscribe((data) => {
-      this.Employees = data;
-    });
-  }
+
 }

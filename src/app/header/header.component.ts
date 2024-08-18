@@ -17,4 +17,24 @@ export class HeaderComponent {
     this.showForm = !this.showForm;
     console.log('Add employee button clicked');
   }
+
+  checkInputs() {
+    const inputIds = [
+      { id: 'id', type: 'number', label: 'ID' },
+      { id: 'firstName', type: 'text', label: 'First Name' },
+      { id: 'lastName', type: 'text', label: 'Last Name' },
+      { id: 'email', type: 'email', label: 'Email' },
+      { id: 'salary', type: 'number', label: 'Salary' }
+    ];
+
+    for (let input of inputIds) {
+      const inputElement = (document.getElementById(input.id) as HTMLInputElement).value;
+      if (!inputElement) {
+        alert(`Please enter a value for ${input.id}.`);
+        return;
+      }
+    }
+  }
+
+
 }
