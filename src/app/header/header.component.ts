@@ -1,40 +1,50 @@
-import { Component } from '@angular/core';
-import {NgIf} from "@angular/common";
+import { Component, EventEmitter, Output } from '@angular/core';
+import { NgIf } from "@angular/common";
+import { Employee } from '../employee.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    NgIf
+    NgIf, FormsModule
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  protected showForm: boolean = false; //initialize  the form to false
 
-  onEmployeeAdd() {
-    this.showForm = !this.showForm;
-    console.log('Add employee button clicked');
+  protected showForm: boolean = false; // Initialize the form to false
+
+  newEmployee: Employee = new Employee(0, '', '', '', 0);
+
+  @Output() employeeAdded = new EventEmitter<Employee>();
+
+  onEmployeeAddForm() {
+    this.showForm = true;
   }
 
-  checkInputs() {
-    const inputIds = [
-      { id: 'id', type: 'number', label: 'ID' },
-      { id: 'firstName', type: 'text', label: 'First Name' },
-      { id: 'lastName', type: 'text', label: 'Last Name' },
-      { id: 'email', type: 'email', label: 'Email' },
-      { id: 'salary', type: 'number', label: 'Salary' }
-    ];
+  checkInputs(): boolean {
+    if (!this.newEmployee.id || !this.newEmployee.firstName || !this.newEmployee.lastName || !this.newEmployee.email || !this.newEmployee.salary) {
+      alert('All fields are required.');
+      return false;
+    }
+    return true;
+  }
 
-    for (let input of inputIds) {
-      const inputElement = (document.getElementById(input.id) as HTMLInputElement).value;
-      if (!inputElement) {
-        alert(`Please enter a value for ${input.id}.`);
-        return;
-      }
+  addEmployee() {
+    if (this.checkInputs()) {
+      this.employeeAdded.emit(this.newEmployee);
+      this.resetForm();
+      this.onCancel(); // Close the form after adding
     }
   }
 
+  onCancel() {
+    this.showForm = false; // Close the form
+  }
 
+  resetForm() {
+    this.newEmployee = new Employee(0, '', '', '', 0); // Reset the form fields
+  }
 }

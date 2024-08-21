@@ -1,16 +1,16 @@
 export class Employee{
   public id:number;
-  public First_Name:string;
-  public Last_Name:string;
-  public Email:string;
-  public Salary:number;
+  public firstName:string;
+  public lastName:string;
+  public email:string;
+  public salary:number;
 
-  constructor( id: number, First_Name:string, Last_Name:string, Email:string, Salary:number) {
+  constructor( id: number, firstName:string, lastName:string, email:string, salary:number) {
   this.id = id;
-  this.First_Name = First_Name;
-  this.Last_Name = Last_Name;
-  this.Email = Email;
-  this.Salary = Salary;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.email = email;
+  this.salary = salary;
   }
 
 }

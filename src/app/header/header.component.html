@@ -11,14 +11,14 @@
     </ul>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="onEmployeeAdd()">Add Employee</button>
+    <button type="button" class="btn btn-primary" (click)="onEmployeeAddForm()">Add Employee</button>
   </div>
 </nav>
 
 
 <div class="modal" *ngIf="showForm">
   <div class="modal-content">
-    <span class="close" (click)="onEmployeeAdd()">&times;</span>
+    <span class="close" (click)="onEmployeeAddForm()">&times;</span>
     <form>
       <div class="form-group">
         <label for="id">ID:</label>
@@ -40,8 +40,8 @@
         <label for="salary">Salary:</label>
         <input id="salary" type="number" class="form-control" required>
       </div>
-      <button type="submit" class="btn btn-success mt-3" (click)="checkInputs()" >Add Employee</button>
-      <button type="cancel" class="btn btn-danger mt-3">Cancel</button>
+      <button type="submit" class="btn btn-success mt-3" (click)="checkInputs() ;  addEmployee()" >Add Employee</button>
+      <button type="button" class="btn btn-danger mt-3" (click)="onCancel()" >Cancel</button>
     </form>
   </div>
 </div>
