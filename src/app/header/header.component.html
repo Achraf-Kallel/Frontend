@@ -15,33 +15,32 @@
   </div>
 </nav>
 
-
 <div class="modal" *ngIf="showForm">
   <div class="modal-content">
     <span class="close" (click)="onEmployeeAddForm()">&times;</span>
-    <form>
+    <form (ngSubmit)="addEmployee()">
       <div class="form-group">
         <label for="id">ID:</label>
-        <input id="id" type="text" class="form-control" required>
+        <input id="id" type="number" class="form-control" required [(ngModel)]="newEmployee.id" name="id">
       </div>
       <div class="form-group">
         <label for="firstName">First Name:</label>
-        <input id="firstName" type="text" class="form-control" required>
+        <input id="firstName" type="text" class="form-control" required [(ngModel)]="newEmployee.firstName" name="firstName">
       </div>
       <div class="form-group">
         <label for="lastName">Last Name:</label>
-        <input id="lastName" type="text" class="form-control" required>
+        <input id="lastName" type="text" class="form-control" required [(ngModel)]="newEmployee.lastName" name="lastName">
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input id="email" type="email" class="form-control" required>
+        <input id="email" type="email" class="form-control" required [(ngModel)]="newEmployee.email" name="email">
       </div>
       <div class="form-group">
         <label for="salary">Salary:</label>
-        <input id="salary" type="number" class="form-control" required>
+        <input id="salary" type="number" class="form-control" required [(ngModel)]="newEmployee.salary" name="salary">
       </div>
-      <button type="submit" class="btn btn-success mt-3" (click)="checkInputs() ;  addEmployee()" >Add Employee</button>
-      <button type="button" class="btn btn-danger mt-3" (click)="onCancel()" >Cancel</button>
+      <button type="submit" class="btn btn-success mt-3">Add Employee</button>
+      <button type="button" class="btn btn-danger mt-3" (click)="onCancel()">Cancel</button>
     </form>
   </div>
 </div>

@@ -20,8 +20,8 @@
       <td>{{ Employee.email }}</td>
       <td>{{ Employee.salary }}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm">Update</button>
-        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="onEditEmployee(Employee)">Update</button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteEmployee(Employee)">Delete</button>
       </td>
     </tr>
     </tbody>
